@@ -72,10 +72,20 @@ class AlbumCrudController extends CrudController
                 'model'     => "App\Models\Genre", // foreign key model
                 'attribute' => 'name', // foreign key attribute that is shown to user
                 'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
-            ]
-        ];
-    }
+            ],
 
+            [
+                'label' => 'Artist', // Label for HTML form field
+                'type'  => 'select',  // HTML element which displaying transactions
+                'name'  => 'artist_id', // Table column which is FK for Customer table
+                'entity'=> 'artist', // Function (method) in Customer model which return transactions
+                'attribute' => 'name', // Column which user see in select box
+                'model' => 'App\Models\Artist' // Model which contain FK
+            ]
+
+        ];
+
+}
     /**
      * Define what happens when the List operation is loaded.
      *
@@ -86,8 +96,6 @@ class AlbumCrudController extends CrudController
     {
         CRUD::column('name');
         CRUD::column('year');
-        CRUD::column('created_at');
-        CRUD::column('updated_at');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -108,6 +116,8 @@ class AlbumCrudController extends CrudController
 
         CRUD::field('name');
         CRUD::field('year');
+        CRUD::field('artist_id');
+
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

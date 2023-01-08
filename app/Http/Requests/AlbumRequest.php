@@ -25,7 +25,8 @@ class AlbumRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:2|max:255',
+            'year' => 'required|between:1000,2023|integer'
         ];
     }
 
