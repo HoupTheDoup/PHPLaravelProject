@@ -60,7 +60,7 @@ class AlbumCrudController extends CrudController
             [
                 'name' => 'year',
                 'label' => 'Year of Releasee',
-                'type'=> 'number'
+                'type'=> ($show ? "text": 'number')
 
             ],
             [    // SelectMultiple = n-n relationship (with pivot table)
@@ -81,7 +81,16 @@ class AlbumCrudController extends CrudController
                 'entity'=> 'artist', // Function (method) in Customer model which return transactions
                 'attribute' => 'name', // Column which user see in select box
                 'model' => 'App\Models\Artist' // Model which contain FK
-            ]
+            ],
+
+            [
+                'label' => "Article Image",
+                'name' => "image",
+                'type' => ($show ? 'view' : 'upload'),
+                'view' => 'partials/image',
+                'upload' => true,
+            ],
+
 
         ];
 
@@ -94,8 +103,11 @@ class AlbumCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name');
-        CRUD::column('year');
+        $this->crud->set('show.setFromDb', false);
+        $this->crud->addColumns($this->getFieldsData(TRUE));
+
+        $this->crud->addButtonFromView('top', 'add_songs', 'add_songs', 'end');
+
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -144,5 +156,14 @@ class AlbumCrudController extends CrudController
         // by changing this config for the Show operation
         $this->crud->set('show.setFromDb', false);
         $this->crud->addColumns($this->getFieldsData(TRUE));
+
+        $this->crud->addColumn(            [
+            'label' => 'Songs', // Label for HTML form field
+            'type'  => ('select'),  // HTML element which displaying transactions
+            'name'  => 'album_id', // Table column which is FK for Customer table
+            'entity'=> 'songs', // Function (method) in Customer model which return transactions
+            'attribute' => 'name', // Column which user see in select box
+            'model' => 'App\Models\Song' // Model which contain FK
+        ]);
     }
 }

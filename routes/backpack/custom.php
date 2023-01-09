@@ -20,4 +20,5 @@ Route::group([
     Route::crud('genre', 'GenreCrudController');
     Route::crud('artist', 'ArtistCrudController');
     Route::crud('album', 'AlbumCrudController');
+    Route::crud('song', 'SongCrudController');
 }); // this should be the absolute last line of this file
