@@ -57,12 +57,24 @@ class AlbumCrudController extends CrudController
                 'label' => 'Name',
                 'type'=> 'text'
             ],
-            [
-                'name' => 'year',
-                'label' => 'Year of Releasee',
-                'type'=> ($show ? "text": 'number')
 
+            [
+                'label' => "Article Image",
+                'name' => "image",
+                'type' => ($show ? 'view' : 'upload'),
+                'view' => 'partials/image',
+                'upload' => true,
             ],
+
+            [
+                'label' => 'Artist', // Label for HTML form field
+                'type'  => 'select',  // HTML element which displaying transactions
+                'name'  => 'artist_id', // Table column which is FK for Customer table
+                'entity'=> 'artist', // Function (method) in Customer model which return transactions
+                'attribute' => 'name', // Column which user see in select box
+                'model' => 'App\Models\Artist' // Model which contain FK
+            ],
+
             [    // SelectMultiple = n-n relationship (with pivot table)
                 'label'     => "Genre",
                 'type'      => ($show ? "select": 'select_multiple'),
@@ -75,21 +87,12 @@ class AlbumCrudController extends CrudController
             ],
 
             [
-                'label' => 'Artist', // Label for HTML form field
-                'type'  => 'select',  // HTML element which displaying transactions
-                'name'  => 'artist_id', // Table column which is FK for Customer table
-                'entity'=> 'artist', // Function (method) in Customer model which return transactions
-                'attribute' => 'name', // Column which user see in select box
-                'model' => 'App\Models\Artist' // Model which contain FK
+                'name' => 'year',
+                'label' => 'Year of Releasee',
+                'type'=> ($show ? "text": 'number')
+
             ],
 
-            [
-                'label' => "Article Image",
-                'name' => "image",
-                'type' => ($show ? 'view' : 'upload'),
-                'view' => 'partials/image',
-                'upload' => true,
-            ],
 
 
         ];

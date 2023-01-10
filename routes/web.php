@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ArtistViewController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [IndexController::class, 'index']);
+Route::get('/artist-view',[ArtistViewController::class, 'artists']);
+Route::get('/album-view',[ArtistViewController::class, 'albums']);
+Route::get('/genres-view',[ArtistViewController::class, 'genres']);
