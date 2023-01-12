@@ -8,14 +8,21 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     public function index() {
-        $artists = DB::table('artists')->select('name','group')->get();
+        $albums = DB::table('albums')->select('name','image', 'created_at')->get();
+     //   $artists = DB::table('artists')->select('name', 'group')->get();
 
-        return view('index', [
-            'title' => 'Laravel Project',
-            'text' => '<p>
-                        {{ $artists }}
-            </p>',
-            'imgURL' => 'assets/images/about/about-part.jpg',
-        ]);
+        $last_3 = DB::table('albums')->orderBy("created_at", 'desc')->select('name','image')->take(3)->get();
+
+
+        return view('index', ['albums' => $albums,
+                                    'last_3' => $last_3]);
     }
+    public function artists()
+    {
+        $artists = DB::table('artists')->select('name', 'group')->get();
+        return (
+        view('index', ['artists' => $artists]));
+    }
+
+
 }

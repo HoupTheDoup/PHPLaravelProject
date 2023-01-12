@@ -1,4 +1,4 @@
-<!DOCTPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>View Artists</title>
@@ -10,6 +10,7 @@
         <td>Year</td>
         <td>Image</td>
         <td>Songs</td>
+        <td>Genre</td>
 
     </tr>
     @foreach ($albums as $album)
@@ -24,6 +25,19 @@
                     {{ ($song->name)}},<br>
                     @endif
                     @endforeach
+            </td>
+            <td>
+                @foreach($genres_albums as $genre_album)
+                    @if($genre_album->album_id == $album->id)
+                        @foreach($genres as $genre)
+                        @if($genre_album->genre_id == $genre->id)
+                            {{ $genre->name }}
+                        @endif
+                        @endforeach
+                    @endif
+
+                @endforeach
+
             </td>
 
         </tr>

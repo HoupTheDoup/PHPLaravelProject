@@ -16,6 +16,8 @@ use App\Http\Controllers\ArtistViewController;
 |
 */
 Route::get('/', [IndexController::class, 'index']);
-Route::get('/artist-view',[ArtistViewController::class, 'artists']);
-Route::get('/album-view',[ArtistViewController::class, 'albums']);
-Route::get('/genres-view',[ArtistViewController::class, 'genres']);
+
+Route::get('/artist_view', [IndexController::class, 'index']);
+Route::get('/artist_view',[ArtistViewController::class, 'artists']);
+Route::get('/album_view',[ArtistViewController::class, 'albums']);
+Route::get('/genres_view',[ArtistViewController::class, 'genres']);

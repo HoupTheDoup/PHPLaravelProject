@@ -4,9 +4,9 @@
     <div class="container">
         <div class="relative -mx-4 flex items-center justify-between">
             <div class="w-60 max-w-full px-4">
-                <a href="index.html" class="navbar-logo block w-full py-5">
+                <a href="/" class="navbar-logo block w-full py-5">
                     <img
-                        src="assets/images/logo/logo-white.svg"
+                        src="assets/images/logo/logo-white.png"
                         alt="logo"
                         class="header-logo w-full"
                     />
@@ -51,24 +51,38 @@
                             </li>
                             <li class="group relative">
                                 <a
-                                    href="/artist-view"
-                                    class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12"
+                                    href="/artist_view"
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12"
+
                                 >
                                     Artists
                                 </a>
                             </li>
+                            <li class="group relative">
+                                <a
+                                    href="/genres_view"
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12"
+
+                                >
+                                    Genres
+                                </a>
+                            </li>
+                            <li class="group relative">
+                                <a
+                                    href="/album_view"
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12"
+
+                                >
+                                    Albums
+                                </a>
+                            </li>
+
                         </ul>
                     </nav>
                 </div>
                 <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
                     <a
-                        href="signin.html"
-                        class="loginBtn py-3 px-7 text-base font-medium text-white hover:opacity-70"
-                    >
-                        Sign In
-                    </a>
-                    <a
-                        href="signup.html"
+                        href="/admin"
                         class="signUpBtn rounded-lg bg-white bg-opacity-20 py-3 px-6 text-base font-medium text-white duration-300 ease-in-out hover:bg-opacity-100 hover:text-dark"
                     >
                         Sign Up
@@ -98,23 +112,9 @@
                     >
                         Informational and music related platform for your everyday music tastes
                     </p>
-                    <ul class="mb-10 flex flex-wrap items-center justify-center">
-                        <li>
-                            <a
-                                href=""
-                                class="inline-flex items-center justify-center rounded-lg bg-white py-4 px-6 text-center text-base font-medium text-dark transition duration-300 ease-in-out hover:text-primary hover:shadow-lg sm:px-10"
-                            >
-                                Download Now
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="wow fadeInUp text-center" data-wow-delay=".3s">
-                        <img
-                            src="assets/images/hero/brand.svg"
-                            alt="image"
-                            class="mx-auto w-full max-w-[250px] opacity-50 transition duration-300 ease-in-out hover:opacity-100"
-                        />
-                    </div>
+                    <h2 style="font-size: 30px; color: white">
+                        Our Latest Albums:
+                    </h2>
                 </div>
             </div>
 
@@ -124,11 +124,14 @@
                     data-wow-delay=".25s"
                 >
                     <div class="mt-16">
-                        <img
-                            src="assets/images/hero/hero-image.jpg"
-                            alt="hero"
-                            class="mx-auto max-w-full rounded-t-xl rounded-tr-xl"
-                        />
+                        <div class="-mx-4 flex flex-wrap" style="display:flex; align-items: center; justify-content: center">
+
+                            @foreach($last_3 as $last_3)
+                            <div class="w-full px-4 md:w-1/2 lg:w-1/4w-full px-4 md:w-1/2 lg:w-1/4"
+                                 style="display: grid; text-align: center; justify-content: center">
+                                <img src="{{ $last_3->image}}" style="width: 150px"> </img>  <p style="font-size: 20px">{{$last_3->name}}</p>  </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
@@ -189,7 +192,7 @@
                         Click down below to see all artists!
                     </p>
                     <a
-                        href="/artist-view"
+                        href="/artist_view"
                         class="text-base font-medium text-body-color hover:text-primary"
                     >
                         See More
@@ -227,7 +230,7 @@
                         Click down below to see all albums!
                     </p>
                     <a
-                        href="/album-view"
+                        href="/album_view"
                         class="text-base font-medium text-body-color hover:text-primary"
                     >
                         See More
@@ -274,12 +277,87 @@
                         Click down below to see all genres!
                     </p>
                     <a
-                        href="/genres-view"
+                        href="/genres_view"
                         class="text-base font-medium text-body-color hover:text-primary"
                     >
                         Learn More
                     </a>
                 </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('footer')
+    <div class="-mx-4 flex flex-wrap">
+        <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12">
+            <div class="mb-10 w-full">
+                <a
+                    href="javascript:void(0)"
+                    class="mb-6 inline-block max-w-[160px]"
+                >
+                    <img
+                        src="assets/images/logo/logo-white.png"
+                        alt="logo"
+                        class="max-w-full"
+                    />
+                </a>
+                <p class="mb-7 text-base text-[#f3f4fe]">
+                    Best music platform you can use!
+                </p>
+
+            </div>
+        </div>
+        <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+            <div class="mb-10 w-full">
+                <h4 class="mb-9 text-lg font-semibold text-white">Features</h4>
+                <ul>
+                    <li>
+                        <a
+                            href="/artist-view"
+                            class="mb-2 inline-block text-base leading-loose text-[#f3f4fe] hover:text-primary"
+                        >
+                            Artists
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/album-view"
+                            class="mb-2 inline-block text-base leading-loose text-[#f3f4fe] hover:text-primary"
+                        >
+                            Albums
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="genre-view"
+                            class="mb-2 inline-block text-base leading-loose text-[#f3f4fe] hover:text-primary"
+                        >
+                            Genres
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12">
+            <div class="mb-10 w-full">
+                <h4 class="mb-9 text-lg font-semibold text-white">Partners</h4>
+                <ul class="flex flex-wrap items-center">
+                    <li>
+                        <a
+                            href="https://uni-vt.bg"
+                            rel="nofollow noopner"
+                            target="_blank"
+                            class="mb-6 mr-5 block max-w-[120px] xl:max-w-[100px] 2xl:max-w-[120px]"
+                        >
+                            <img
+                                src="assets/images/logo/logo-vtu-white.png"
+                                alt=""
+                                style="scale: 200%"
+                            />
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
