@@ -129,12 +129,6 @@
                     >
                         Info!
                     </h2>
-                    <p
-                        class="text-lg leading-relaxed text-body-color sm:text-xl sm:leading-relaxed"
-                    >
-                        There are many variations of passages of Lorem Ipsum available
-                        but the majority have suffered alteration in some form.
-                    </p>
                 </div>
             </div>
         </div>
