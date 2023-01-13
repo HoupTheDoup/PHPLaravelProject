@@ -27,7 +27,7 @@ class AlbumRequest extends FormRequest
         return [
             'name' => 'required|min:2|max:255',
             'year' => 'required|between:1000,2023|integer',
-            'image' => 'required'
+            'image' => 'required|mimetypes:png,jpeg,jpg,webp,jfif'
         ];
     }
 

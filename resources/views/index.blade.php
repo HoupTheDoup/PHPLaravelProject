@@ -35,7 +35,7 @@
                         <ul class="blcok lg:flex">
                             <li class="group relative">
                                 <a
-                                    href="#home"
+                                    href="/"
                                     class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70"
                                 >
                                     Home
@@ -293,7 +293,7 @@
         <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12">
             <div class="mb-10 w-full">
                 <a
-                    href="javascript:void(0)"
+                    href="/"
                     class="mb-6 inline-block max-w-[160px]"
                 >
                     <img
@@ -314,7 +314,7 @@
                 <ul>
                     <li>
                         <a
-                            href="/artist-view"
+                            href="/artist_view"
                             class="mb-2 inline-block text-base leading-loose text-[#f3f4fe] hover:text-primary"
                         >
                             Artists
@@ -322,7 +322,7 @@
                     </li>
                     <li>
                         <a
-                            href="/album-view"
+                            href="/album_view"
                             class="mb-2 inline-block text-base leading-loose text-[#f3f4fe] hover:text-primary"
                         >
                             Albums
@@ -330,7 +330,7 @@
                     </li>
                     <li>
                         <a
-                            href="genre-view"
+                            href="genres_view"
                             class="mb-2 inline-block text-base leading-loose text-[#f3f4fe] hover:text-primary"
                         >
                             Genres

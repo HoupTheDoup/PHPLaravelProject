@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ArtistViewController;
-
+use App\Http\Controllers\AlbumViewController;
+use App\Http\Controllers\GenreViewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,8 @@ use App\Http\Controllers\ArtistViewController;
 */
 Route::get('/', [IndexController::class, 'index']);
 
-Route::get('/artist_view', [IndexController::class, 'index']);
+
 Route::get('/artist_view',[ArtistViewController::class, 'artists']);
-Route::get('/album_view',[ArtistViewController::class, 'albums']);
-Route::get('/genres_view',[ArtistViewController::class, 'genres']);
+Route::get('/album_view',[AlbumViewController::class, 'albums']);
+Route::get('/genres_view',[GenreViewController::class, 'genres']);
+Route::get('/albums', [AlbumViewController::class,'searchh'])->name('albums.search');

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-        Play | Free Tailwind CSS Template for Startup and SaaS By TailGrids
+        Spotifile
     </title>
     <link
         rel="shortcut icon"
@@ -14,6 +14,7 @@
     />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/tailwind.css" />
+    <link rel="stylesheet" href="/assets/css/additional.css" />
 
     <!-- ==== WOW JS ==== -->
     <script src="assets/js/wow.min.js"></script>
@@ -63,40 +64,8 @@
                         <div
                             class="-mx-3 flex items-center justify-center md:justify-start"
                         >
-                            <a
-                                href="javascript:void(0)"
-                                class="px-3 text-base text-[#f3f4fe] hover:text-primary"
-                            >
-                                Privacy policy
-                            </a>
-                            <a
-                                href="javascript:void(0)"
-                                class="px-3 text-base text-[#f3f4fe] hover:text-primary"
-                            >
-                                Legal notice
-                            </a>
-                            <a
-                                href="javascript:void(0)"
-                                class="px-3 text-base text-[#f3f4fe] hover:text-primary"
-                            >
-                                Terms of service
-                            </a>
+                            <p style="text-align: center; color: white">© 2023 Spotifile</p>
                         </div>
-                    </div>
-                </div>
-                <div class="w-full px-4 md:w-1/3 lg:w-1/2">
-                    <div class="my-1 flex justify-center md:justify-end">
-                        <p class="text-base text-[#f3f4fe]">
-                            Designed and Developed by
-                            <a
-                                href="https://tailgrids.com"
-                                rel="nofollow noopner"
-                                target="_blank"
-                                class="text-primary hover:underline"
-                            >
-                                TailGrids and UIdeck
-                            </a>
-                        </p>
                     </div>
                 </div>
             </div>
