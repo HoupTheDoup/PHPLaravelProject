@@ -36,8 +36,8 @@ class ArtistSeeder extends Seeder
             'group' => 'Linkin Park'
         ]);
         Artist::create([
-            'name' => 'Skandau',
-            'group' => 'Skandau'
+            'name' => 'Sezy',
+            'group' => 'Sezy'
         ]);
         Artist::create([
             'name' => 'Vesko Marinov',
