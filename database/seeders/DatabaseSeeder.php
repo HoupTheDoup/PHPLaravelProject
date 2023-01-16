@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             AlbumSeeder::class,
             GenreSeeder::class,
             GenreAlbumSeeder::class,
-            SongSeeder::class
+            SongSeeder::class,
+            UserSeeder::class
         ]);
 
 
